@@ -39,7 +39,7 @@ for f in sorted(glob.glob("/home/joyce/Projects/Flood_Tweet_Project/data/Tweets/
             try:
                 tweet = orjson.loads(line)
             except orjson.JSONDecodeError:
-                print("Fuck James!")
+                pass
             if 'id_str' in tweet and(not tweet['is_quote_status']):
                 polygon = geoguess_in_target(tweet, target_countries = ['united kingdom'], db_weights=db_weights, weights=weights)
                 if polygon:
